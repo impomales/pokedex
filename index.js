@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const apiRoutes = require('./routes');
 const morgan = require('morgan');
+const { db } = require('./db');
 
 app.use(morgan('dev'));
 
@@ -22,6 +23,10 @@ app.get('*', (req, res, next) => {
   res.status(404).send('route not found');
 })
 
-app.listen(3000, () => {
-  console.log('server listening on port 3000');
-});
+db.sync({force: true, logging: false})
+  .then(() => {
+    app.listen(3000, () => {
+      console.log('server listening on port 3000');
+    });
+  })
+
