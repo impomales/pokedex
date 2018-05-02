@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 const db = require('./_db');
 
 const Pokemon = db.define('pokemon', {

@@ -4,7 +4,7 @@ const pokemon = [
   {
     name: 'Pikachu',
     type: ['electric'],
-    weakness: ['ground'],
+    weaknesses: ['ground'],
     gender: 'both',
     weight: 13.2,
     hp: 2,
@@ -17,7 +17,7 @@ const pokemon = [
   {
     name: 'Squirtle',
     type: ['water'],
-    weakness: ['ground'],
+    weaknesses: ['ground'],
     gender: 'both',
     weight: 13.2,
     hp: 2,
@@ -30,7 +30,7 @@ const pokemon = [
   {
     name: 'Bulbasaur',
     type: ['grass'],
-    weakness: ['ground'],
+    weaknesses: ['ground'],
     gender: 'both',
     weight: 13.2,
     hp: 2,
@@ -43,7 +43,7 @@ const pokemon = [
   {
     name: 'Charmander',
     type: ['fire'],
-    weakness: ['ground'],
+    weaknesses: ['ground'],
     gender: 'both',
     weight: 13.2,
     hp: 2,

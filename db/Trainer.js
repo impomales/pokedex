@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 const db = require('./_db');
 
 const Trainer = db.define('trainer', {
