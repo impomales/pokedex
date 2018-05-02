@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const apiRoutes = require('./routes');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 const { db } = require('./db');
 
 app.use(morgan('dev'));
+app.use(bodyParser.json());
 
 app.use('/api', apiRoutes);
 

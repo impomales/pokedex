@@ -12,6 +12,16 @@ router.get('/', (req, res, next) => {
     })
 });
 
+router.post('/', (req, res, next) => {
+  Pokemon.create(req.body)
+    .then(createdPokemon => {
+      res.status(201).send(createdPokemon);
+    })
+    .catch(err => {
+      next(err);
+    })
+});
+
 router.get('/:id', (req, res, next) => {
   Pokemon.findById(req.params.id)
     .then(pokemon => {
