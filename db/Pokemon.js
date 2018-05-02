@@ -19,7 +19,13 @@ const Pokemon = db.define('pokemon', {
   },
   weight: {
     type: Sequelize.DOUBLE,
-    allowNull: false
+    allowNull: false,
+  },
+  weightStr: {
+    type: Sequelize.VIRTUAL,
+    get () {
+      return `${this.getDataValue('weight')} lbs`;
+    }
   },
   hp: {
     type: Sequelize.INTEGER,
