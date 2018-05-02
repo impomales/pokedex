@@ -12,4 +12,14 @@ router.get('/', (req, res, next) => {
     })
 });
 
+router.get('/:id', (req, res, next) => {
+  Pokemon.findById(req.params.id)
+    .then(pokemon => {
+      res.send(pokemon);
+    })
+    .catch(err => {
+      next(err);
+    })
+});
+
 module.exports = router;
