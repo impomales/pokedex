@@ -13,7 +13,7 @@ const Pokemon = db.define('pokemon', {
     type: Sequelize.ARRAY(Sequelize.STRING)
   },
   gender: {
-    type: Sequelize.ENUM(['male', 'female']),
+    type: Sequelize.ENUM(['male', 'female', 'both']),
     allowNull: false
   },
   weight: {
