@@ -23,9 +23,22 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-  Pokemon.findById(req.params.id)
+  Pokemon.findById(Number(req.params.id))
     .then(pokemon => {
       res.send(pokemon);
+    })
+    .catch(err => {
+      next(err);
+    })
+});
+
+router.delete('/:id', (req, res, next) => {
+  Pokemon.findById(Number(req.params.id))
+    .then(pokemon => {
+      return pokemon.destroy();
+    })
+    .then((destroyedPokemon) => {
+      res.send(`pokemon with id ${req.params.id} successfully deleted`);
     })
     .catch(err => {
       next(err);
