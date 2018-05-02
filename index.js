@@ -23,7 +23,7 @@ app.get('*', (req, res, next) => {
   res.status(404).send('route not found');
 })
 
-db.sync({force: true, logging: false})
+db.sync({logging: false})
   .then(() => {
     app.listen(3000, () => {
       console.log('server listening on port 3000');
